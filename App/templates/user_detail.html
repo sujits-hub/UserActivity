@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Detail</title>
+</head>
+<body>
+	<h1>Details of the User {{ form.user_id }}</h1>
+	<h3>Real name - {{ form.real_name }}</h3>
+	<h3>tz - {{ form.tz }}</h3>
+	<ul>
+		{% for activity in form.activity_periods %}
+		<li>
+			<ul>
+				<li><h4>start_time - {{ activity.start_time }}</h4></li>
+				<li><h4>start_time - {{ activity.end_time }}</h4></li>
+			</ul>
+		</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

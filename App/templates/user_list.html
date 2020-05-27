@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UserList</title>
+</head>
+<body>
+	<h1> User List </h1>
+	{% for user in form.user_list %}
+		<a href="{% url 'user_detail' user_id=user %}"><h3>{{ user }}</h3></a>
+	{% endfor %}
+</body>
+</html>

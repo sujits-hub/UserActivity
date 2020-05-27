@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Acitvity</title>
+</head>
+<body>
+	<h1>Documentation page of the Django Project Submitted</h1>
+	<h2>Task Given: </h2>
+	<ul>
+		<li>Design a Django Application with User and ActivityPeriod models</li>
+		<li>Write custom management command to populate the database with dummy data</li>
+		<li>Write an API to serve the data in the json format</li>
+	</ul>
+	<h2>You can see the end point
+		<a href="{% url 'get_all_details' %}">here</a>
+	</h2>
+	<h2>All Api used in the project are listed below.</h2>
+	<ul>
+		<a href="{% url 'get_all_details' %}"><li>GET - /activity/get-all-details/ </li></a>
+		<a href="{% url 'user_list' %}"><li>GET - /activity/user_list/ </li></a>
+		<li>GET - /activity/user_list/<user_id>/ Go to /activity/user_list/ and by clicking a user you can see this page</li>
+	</ul>
+	<h2>Implementation</h2>
+	<h3>Models</h3>
+	<ul>
+		<li><h4>User</h4></li>
+			<h4>This Model is used to store information about the user.It contains the following attributes:</h4>
+			<ul>
+				<li>user_id - unique CharField() which contains the id of the user</li>
+				<li>real_name - CharField() which contains the name of the user</li>
+				<li>tz- DateTimeField() which contains the timezone</li>
+			</ul>
+		<li><h4>Activity Periods</h4></li>
+			<h4>This Model is used to store the session of the user that is activity periods of the user. It contains the following attributes.</h4>
+			<ul>
+				<li>user - ForeignKey attribute that contains User information</li>
+				<li>start_time - DateTimeField() which contains the start_time of the activity of the user</li>
+				<li>end_time - DateTimeField() which contains the end_time of the activity of the user</li>
+			</ul>
+	</ul>
+	<h3>Custom Management Command</h3>
+	<p>Dummy data has been populated using BaseCommand. Data is produced using Faker library</p>
+</body>
+</html>
